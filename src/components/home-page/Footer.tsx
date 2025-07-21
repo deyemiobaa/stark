@@ -1,5 +1,4 @@
 import imageOne from "../../assets/stark.svg";
-import imageTwo from "../../assets/footerBg.svg";
 const Footer = () => {
   return (
     <div className="bg-[#0C0C0C] py-10 md:pt-20 pb-5 px-10 space-y-10">
@@ -14,7 +13,7 @@ const Footer = () => {
           <p>hello@Stark.com</p>
         </div>
       </div>
-      <div className="border-t border-[#525252] py-10 flex text-white gap-5 md:gap-20 text-[16px] lg:text-[20px]">
+      {/* <div className="border-t border-[#525252] py-10 flex text-white gap-5 md:gap-20 text-[16px] lg:text-[20px]">
         <div className="flex flex-col gap-1 ">
           <p>Raleigh</p>
           <p className="font-light text-[#999999]">
@@ -29,7 +28,7 @@ const Footer = () => {
             NC 28217704.333.7272
           </p>
         </div>
-      </div>
+      </div> */}
       <div className="flex justify-between gap-20 items-center    ">
         <div>
           {" "}
@@ -41,11 +40,6 @@ const Footer = () => {
         </div>
         <div className="flex items-center gap-10">
           <p className="text-[#999999] text-xl md:text-2xl">2025</p>
-          <img
-            src={imageTwo}
-            alt=""
-            className="w-[80px] md:w-[100px] xl:w-[152px]"
-          />
         </div>
       </div>
     </div>
