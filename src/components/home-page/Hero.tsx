@@ -1,34 +1,16 @@
-import { AnimatePresence, motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
+import NavBar from "../../ui/NavBar";
 import arrow from "../../assets/arrow.svg";
-import menu from "../../assets/menu.svg";
-import stark from "../../assets/stark-logo.svg";
 import { useState } from "react";
 
 const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const HandleClick = () => {
-    setIsOpen(!isOpen);
-  };
+  const [hovered, setHovered] = useState<"first" | "second" | null>("first");
 
   return (
     <>
       {/* DESKTOP SECTION */}
       <div className="p-5 hidden md:block  space-y-4">
-        <div className="flex justify-between items-center px-5  rounded-xl">
-          <img src={stark} alt="logo" />
-          <div className="flex items-center text-[16px]  font-bold leading-4 tracking-tight text-white  gap-5 xl:gap-15 rounded-2xl">
-            <p className="cursor-pointer">ABOUT US</p>
-            <p className="cursor-pointer">OUR WORK</p>
-            <p className="cursor-pointer">SERVICES</p>
-            <p className="cursor-pointer">BLOGS</p>
-            <p className="cursor-pointer">CONTACT US</p>
-            <button className="text-black p-2 rounded-full bg-white cursor-pointer">
-              see our work
-            </button>
-          </div>
-        </div>
+        <NavBar />
         <div className="home-bg rounded-xl p-5 flex flex-col space-y-5">
           <div className="h-full flex flex-col  justify-between ">
             <div className="text-[70px] lg:text-[92px] font-medium text-white leading-17 lg:leading-24 tracking-tighter">
@@ -42,13 +24,45 @@ const Hero = () => {
                   boundaries of creative expression.
                 </p>
                 <div className="flex md:flex-row flex-col items-center gap-5 text-white ">
-                  <button className="text-black flex gap-2 items-center pl-4 p-[2px] rounded-full bg-white cursor-pointer">
-                    See our work
-                    <img src={arrow} alt="" />
-                  </button>
-                  <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] to-[#999999] font-light tracking-tighter  text-[16px] ">
-                    Explore Services
-                  </p>
+                  {hovered === "second" ? (
+                    <Link
+                      onMouseEnter={() => setHovered("first")}
+                      onMouseLeave={() => setHovered(null)}
+                      to="/work"
+                    >
+                      <button className="flex items-center gap-3  cursor-pointer pl-4 p-[4px] rounded-full border border-white font-[400] text-white transition hover:scale-110 focus:scale-110 active:scale-105">
+                        <span className="leading-[1.4]">See Our Work</span>
+                        <img src={arrow} alt="" />
+                      </button>
+                    </Link>
+                  ) : (
+                    <Link to="/work">
+                      <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full bg-white text-[16px] font-[400] leading-[1.4] text-black  transition hover:scale-110 focus:scale-105 active:scale-105">
+                        <span>See Our Work</span>
+                        <img src={arrow} alt="" />
+                      </button>
+                    </Link>
+                  )}
+
+                  {hovered === "first" ? (
+                    <Link
+                      onMouseEnter={() => setHovered("second")}
+                      onMouseLeave={() => setHovered(null)}
+                      to="/services"
+                    >
+                      <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full border border-white font-[400] text-white transition hover:scale-110 focus:scale-110 active:scale-105">
+                        <span className="leading-[1.4]">Explore Services</span>
+                        <img src={arrow} alt="" />
+                      </button>
+                    </Link>
+                  ) : (
+                    <Link to="/services">
+                      <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full bg-white text-[16px] font-[400] leading-[1.4] text-black  transition hover:scale-110 focus:scale-105 active:scale-105">
+                        <span>Explore Services</span>
+                        <img src={arrow} alt="" />
+                      </button>
+                    </Link>
+                  )}
                 </div>
               </div>
 
@@ -70,36 +84,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
 
         <div className="relative z-10">
-          <div className="flex justify-between items-center bg-[#1A1A1A] p-5">
-            <img src={stark} alt="logo" />
-            <button
-              className="text-black px-4 py-2 flex gap-2 rounded-2xl bg-white"
-              onClick={HandleClick}
-            >
-              Menu
-              <img src={menu} alt="menu icon" />
-            </button>
-          </div>
-
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="absolute top-24 right-5 bg-[#252525] text-white space-y-3 font-bold w-1/2 p-5 rounded-2xl z-10"
-              >
-                <p className="cursor-pointer">Home</p>
-                <p className="cursor-pointer">About</p>
-                <p className="cursor-pointer">Services</p>
-                <button className="text-black p-4 rounded-2xl bg-white cursor-pointer">
-                  Contact Us
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
+          <NavBar />
           <div className="flex flex-col justify-center items-center h-[80vh] space-y-10 p-5">
             <div>
               <p className="text-[50px] font-medium text-white tracking-tighter text-center">
@@ -117,13 +102,19 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex md:flex-row flex-col items-center gap-5 text-white ">
-              <button className="text-black flex gap-2 items-center pl-4 p-[2px] rounded-full bg-white cursor-pointer">
-                See our work
-                <img src={arrow} alt="" />
-              </button>
-              <p className="text-[#999999] font-light tracking-tighter underline text-[16px] ">
+              <Link to="/work">
+                <button className="text-black flex gap-2 items-center pl-4 p-[2px] rounded-full transition hover:scale-110 focus:scale-105 active:scale-105 bg-white cursor-pointer">
+                  See our work
+                  <img src={arrow} alt="" />
+                </button>
+              </Link>
+
+              <Link
+                to="/services"
+                className="text-[#999999] font-light tracking-tighter cursor-pointer hover:underline text-[16px] "
+              >
                 Explore Services
-              </p>
+              </Link>
             </div>
           </div>
         </div>
