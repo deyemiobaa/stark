@@ -1,35 +1,31 @@
 body {
   margin: 0;
-  background-image: url('../src/assets/Intro.svg');
-  background-size: cover;       
-  background-position: center; 
-  background-attachment: fixed; 
-  background-repeat: no-repeat; 
+  background-image: url("../src/assets/Intro.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-
 .home-bg {
-  background-image: url('../src/assets/stark-hero.svg');
+  background-image: url("../src/assets/stark-hero.svg");
   background-size: cover;
   background-position: center;
   height: 792px;
   width: 100%;
 }
 
-
-
 .scenes-bg {
   background-image: url("../src/assets/scenes-bg.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
 }
 
 .explore-bg {
   background-image: url("../src/assets/exploration-bg.svg");
 
-background-size: cover;
-background-position: center;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
