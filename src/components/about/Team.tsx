@@ -3,7 +3,7 @@ import image from "../../assets/team.svg";
 
 const Team = () => {
   return (
-    <div className=" p-5 py-14 ">
+    <div className="p-5 py-14 ">
       <div className="hidden lg:flex justify-between gap-5 xl:gap-10">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col  mt-20 space-y-10 p-5">
