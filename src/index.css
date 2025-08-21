@@ -15,6 +15,22 @@ body {
   width: 100%;
 }
 
+.about-bg {
+  background-image: url("../src/assets/about-bg.svg");
+  background-size: cover;
+  background-position: center;
+  height: 792px;
+  width: 100%;
+}
+
+.ab-sectiontwo-bg {
+  background-image: url("../src/assets/about2-bg.svg");
+  background-size: cover;
+  background-position: center;
+  height: 792px;
+  width: 100%;
+}
+
 .scenes-bg {
   background-image: url("../src/assets/scenes-bg.svg");
   background-size: cover;

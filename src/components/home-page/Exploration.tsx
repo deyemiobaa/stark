@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
 import arrow from "../../assets/arrow.svg";
 import image from "../../assets/exp-image.svg";
+import { useState } from "react";
 const Exploration = () => {
+  const [hovered, setHovered] = useState<"first" | "second" | null>("first");
   return (
     <div className=" p-5 py-14">
       <div className="flex justify-between explore-bg rounded-2xl py-15">
@@ -11,16 +14,47 @@ const Exploration = () => {
               Join us in the exploration of creativity and innovation
             </p>
             <div className="flex md:flex-row flex-col items-center gap-5 text-white ">
-              <button className="text-black flex  gap-2 items-center pl-4 p-[2px] rounded-full bg-white cursor-pointer">
-                See our work in action
-                <img src={arrow} alt="" />
-              </button>
-              <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#FFFFFF] to-[#999999] ">
-                {" "}
-                <p className=" font-light tracking-tighter text-[16px] ">
-                  Talk to the team
-                </p>
-              </span>
+              {hovered === "second" ? (
+                <Link
+                  onMouseEnter={() => setHovered("first")}
+                  onMouseLeave={() => setHovered(null)}
+                  to="/work"
+                >
+                  <button className="flex items-center gap-3  cursor-pointer pl-4 p-[4px] rounded-full border border-white font-[400] text-white transition hover:scale-110 focus:scale-110 active:scale-105">
+                    <span className="leading-[1.4]">
+                      See our work in action
+                    </span>
+                    <img src={arrow} alt="" />
+                  </button>
+                </Link>
+              ) : (
+                <Link to="/work">
+                  <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full bg-white text-[16px] font-[400] leading-[1.4] text-black  transition hover:scale-110 focus:scale-105 active:scale-105">
+                    <span>See our work in action</span>
+                    <img src={arrow} alt="" />
+                  </button>
+                </Link>
+              )}
+
+              {hovered === "first" ? (
+                <Link
+                  onMouseEnter={() => setHovered("second")}
+                  onMouseLeave={() => setHovered(null)}
+                  to="/services"
+                >
+                  <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full border border-white font-[400] text-white transition hover:scale-110 focus:scale-110 active:scale-105">
+                    <span className="leading-[1.4]">Talk to the team</span>
+                    <img src={arrow} alt="" />
+                  </button>
+                </Link>
+              ) : (
+                <Link to="/services">
+                  <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full bg-white text-[16px] font-[400] leading-[1.4] text-black  transition hover:scale-110 focus:scale-105 active:scale-105">
+                    <span>Talk to the team</span>
+                    <img src={arrow} alt="" />
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
