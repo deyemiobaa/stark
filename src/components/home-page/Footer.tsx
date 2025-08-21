@@ -35,24 +35,22 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-between gap-2 lg:gap-20 overflow-hidden  ">
+      <div className="flex flex-col md:flex-row justify-between gap-4 lg:gap-20 overflow-hidden  ">
         <div>
-          {" "}
           <img
             src={imageOne}
             alt=""
             className="w-[150px] md:w-[300px] xl:w-[587px]"
           />
         </div>
-        <div className="flex flex-col justify-around">
-          <div></div>
-          <div className="flex items-center  gap-5">
-            <p className="text-[#999999] text-xl md:text-2xl">2025</p>
-            <img src={linkedln} alt="" className="cursor-pointer" />
-            <img src={facebook} alt="" className="cursor-pointer" />
-            <img src={instagram} alt="" className="cursor-pointer" />
-          </div>
+        <div className="flex items-center  gap-5">
+          <img src={linkedln} alt="" className="cursor-pointer" />
+          <img src={facebook} alt="" className="cursor-pointer" />
+          <img src={instagram} alt="" className="cursor-pointer" />
         </div>
+      </div>
+      <div className="border-t border-[#525252] py-10">
+        <p className="text-[#999999] text-xl md:text-2xl">2025</p>
       </div>
     </div>
   );
