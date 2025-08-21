@@ -45,3 +45,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.ourwork-bg {
+  background-image: url("../src/assets/ourwork-bg.svg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  width: 100%;
+}
