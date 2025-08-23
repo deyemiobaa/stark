@@ -2,7 +2,7 @@ import image from "../../assets/ab-image2.svg";
 
 const AbSectionTwo = () => {
   return (
-    <div className="p-5 flex items-center ab-sectiontwo-bg">
+    <div className="p-5 py-14 md:py-30 flex items-center ab-sectiontwo-bg">
       <div className="space-y-10 p-5">
         <img src={image} alt="" />
         <div className="max-w-[682px] space-y-3">

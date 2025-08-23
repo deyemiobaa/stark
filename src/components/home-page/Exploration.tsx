@@ -20,18 +20,26 @@ const Exploration = () => {
                   onMouseLeave={() => setHovered(null)}
                   to="/work"
                 >
-                  <button className="flex items-center gap-3  cursor-pointer pl-4 p-[4px] rounded-full border border-white font-[400] text-white transition hover:scale-110 focus:scale-110 active:scale-105">
+                  <button className="flex items-center gap-2 sm:gap-3 cursor-pointer px-4 py-2 sm:pl-4 sm:p-[4px] rounded-full border border-white font-[400] text-lg sm:text-[16px] text-white transition hover:scale-110 focus:scale-110 active:scale-105">
                     <span className="leading-[1.4]">
                       See our work in action
                     </span>
-                    <img src={arrow} alt="" />
+                    <img
+                      src={arrow}
+                      alt=""
+                      className="w-5 h-5 sm:w-auto sm:h-auto"
+                    />
                   </button>
                 </Link>
               ) : (
                 <Link to="/work">
-                  <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full bg-white text-[16px] font-[400] leading-[1.4] text-black  transition hover:scale-110 focus:scale-105 active:scale-105">
+                  <button className="flex items-center gap-2 sm:gap-3 cursor-pointer px-4 py-2 sm:pl-4 sm:p-[4px] rounded-full bg-white text-lg sm:text-[16px] font-[400] leading-[1.4] text-black transition hover:scale-110 focus:scale-105 active:scale-105">
                     <span>See our work in action</span>
-                    <img src={arrow} alt="" />
+                    <img
+                      src={arrow}
+                      alt=""
+                      className="w-5 h-5 sm:w-auto sm:h-auto"
+                    />
                   </button>
                 </Link>
               )}
@@ -42,16 +50,24 @@ const Exploration = () => {
                   onMouseLeave={() => setHovered(null)}
                   to="/services"
                 >
-                  <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full border border-white font-[400] text-white transition hover:scale-110 focus:scale-110 active:scale-105">
+                  <button className="flex items-center gap-2 sm:gap-3 cursor-pointer px-4 py-2 sm:pl-4 sm:p-[4px] rounded-full border border-white font-[400] text-lg sm:text-[16px] text-white transition hover:scale-110 focus:scale-110 active:scale-105">
                     <span className="leading-[1.4]">Talk to the team</span>
-                    <img src={arrow} alt="" />
+                    <img
+                      src={arrow}
+                      alt=""
+                      className="w-5 h-5 sm:w-auto sm:h-auto"
+                    />
                   </button>
                 </Link>
               ) : (
                 <Link to="/services">
-                  <button className="flex items-center gap-3 pl-4 p-[4px] cursor-pointer rounded-full bg-white text-[16px] font-[400] leading-[1.4] text-black  transition hover:scale-110 focus:scale-105 active:scale-105">
+                  <button className="flex items-center gap-2 sm:gap-3 cursor-pointer px-4 py-2 sm:pl-4 sm:p-[4px] rounded-full bg-white text-lg sm:text-[16px] font-[400] leading-[1.4] text-black transition hover:scale-110 focus:scale-105 active:scale-105">
                     <span>Talk to the team</span>
-                    <img src={arrow} alt="" />
+                    <img
+                      src={arrow}
+                      alt=""
+                      className="w-5 h-5 sm:w-auto sm:h-auto"
+                    />
                   </button>
                 </Link>
               )}
