@@ -15,7 +15,7 @@ const Move = () => {
             <div className="flex  text-white ">
               <Link to="/work">
                 <button className="flex items-center gap-2 sm:gap-3 cursor-pointer px-4 py-2 sm:pl-4 sm:p-[4px] rounded-full bg-white text-lg sm:text-[16px] font-[400] leading-[1.4] text-black transition hover:scale-110 focus:scale-105 active:scale-105">
-                  <span>See our work in action</span>
+                  <span>Move From Reporting To Results</span>
                   <img
                     src={arrow}
                     alt=""
