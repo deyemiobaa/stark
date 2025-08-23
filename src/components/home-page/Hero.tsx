@@ -103,12 +103,15 @@ const Hero = () => {
             </div>
             <div className="flex md:flex-row flex-col items-center gap-5 text-white ">
               <Link to="/work">
-                <button className="text-black flex gap-2 items-center pl-4 p-[2px] rounded-full transition hover:scale-110 focus:scale-105 active:scale-105 bg-white cursor-pointer">
+                <button className="text-black flex items-center gap-2 sm:gap-3 px-4 py-2 sm:pl-4 sm:p-[2px] rounded-full bg-white cursor-pointer text-lg sm:text-[16px] font-[400] leading-[1.4] transition hover:scale-110 focus:scale-105 active:scale-105">
                   See our work
-                  <img src={arrow} alt="" />
+                  <img
+                    src={arrow}
+                    alt=""
+                    className="w-5 h-5 sm:w-auto sm:h-auto"
+                  />
                 </button>
               </Link>
-
               <Link
                 to="/services"
                 className="text-[#999999] font-light tracking-tighter cursor-pointer hover:underline text-[16px] "

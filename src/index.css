@@ -27,7 +27,7 @@ body {
   background-image: url("../src/assets/about2-bg.svg");
   background-size: cover;
   background-position: center;
-  height: 792px;
+
   width: 100%;
 }
 
@@ -52,4 +52,28 @@ body {
   background-position: center;
   height: 600px;
   width: 100%;
+}
+
+
+.services-bg {
+  background-image: url("../src/assets/services-bg.svg");
+  background-size: cover;
+  background-position: center;
+  height: 792px;
+  width: 100%;
+}
+
+.sv-sectiontwo-bg {
+  background-image: url("../src/assets/sv-sectiontwo-bg.svg");
+  background-size: cover;
+  background-position: center;
+
+  width: 100%;
+}
+
+
+.product-bg {
+  background-image: url("../src/assets/product-bg.svg");
+  background-size: cover;
+  background-position: center;
 }
